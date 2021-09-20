@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<style>
+    input[type=checkbox] {
+        height: 30px;
+        /* margin-left: -260px; */
+        /* left: -100px; */
+    }
+
+    input[type=checkbox]:checked {
+        height: 30px;
+        left: -100px;
+    }
+
+</style>
+<br>
+<center>
+    <h2> Enter Data to get Predictions</h2>
+    <br>
+    
+    <form style="width: 60%;" method="POST">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Gender</label>
+        
+        {{form.gender|add_class:'form-control'}}
+ 
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Age</label>
+        {{form.age|add_class:'form-control'}}
+
+      </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Previously Insured</label>
+        {{form.previously_insured|add_class:'form-control'}}
+          
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Holds Driving License</label>
+          {{form.holds_driving_license|add_class:'form-control'}}
+
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Vehicle Age</label>
+          {{form.vehicle_age|add_class:'form-control'}}
+
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Is vehicle damaged</label>
+          {{form.is_vehicle_damaged|add_class:'form-control'}}
+
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Annual Premium</label>
+          {{form.annual_premium|add_class:'form-control'}}
+
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Policy Sales Channel</label>
+          {{form.policy_sales_channel|add_class:'form-control'}}
+
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Vintage </label>
+          {{form.vintage|add_class:'form-control'}}
+
+        </div>
+       
+      </div>
+
+     <br>
+    <input type="submit" class="btn btn-primary" value="Submit" style="width: 500px">
+    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+  </form>
+</center>
+
+
+{% endblock %}
